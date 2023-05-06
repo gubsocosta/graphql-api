@@ -1,38 +1,37 @@
-# API GraphQL +  Node + ApollServer
+# GraphQL API
 
-## Descrição
-Esse projeto foi desenvolvido no curso de GraphQL - construindo uma API com Apollo Server, oferecido pela Alura Cursos Online.
+## Description
+This project was developed in the GraphQL course, offered by [Alura Cursos Online](https://cursos.alura.com.br/course/graphql-construindo-api-apollo-server).
 
-No curso, foi construída uma API com GraphQL que busca os dados de uma outra API REST.
-Os dados são disponilizado sobre o protocolo HTTP.
+In the course, was built an API that fetches datas from a REST API.
 
-## Requisitos
+## Requirements
 - node v14
 - npm  v9
 
-## Iniciando a aplicação
-Após clonar o objeto, entre no terminal e vá até a raiz do projeto.
-
-Execute este comando para baixar as dependências do projeto.
+## Get started
+After cloning the repository, run this command to install all dependencies.
 ```shell
 $ npm install
 ```
 
-Para iniciar a API REST, execute esse comando:
+Run this command to start the REST API server:
 ```shell
 $ npm run json-server:start
 ```
-A API REST estará recebendo requisições na porta 3000.
+
+The REST API server listens on port 3000 for connections.
 ```shell
 $ curl --request GET \
      --url http://localhost:3000
 ```
 
-Para iniciar a API GraphQL, execute esse comando:
+In other terminal session, run this command to start GraphQL API server:
 ```shell
 $ npm start
 ```
-A API GraphQL estará escutando na porta 4000.
+
+The API GraphQL server listens on port 4000 for connections.
 ```shell
 $ curl --request POST \
   --header 'content-type: application/json' \
@@ -40,7 +39,15 @@ $ curl --request POST \
   --data '{"query":"query { __typename }"}'
 ```
 
+For to access Apollo playground:
+```shell
+$ curl --request POST \
+  --header 'content-type: application/json' \
+  --url http://localhost:4000/playground \
+  --data '{"query":"query { __typename }"}'
+```
+
 ## Links
-- Curso GraphQL: https://cursos.alura.com.br/course/graphql-construindo-api-apollo-server
-- Documentação oficial GraphQL: https://graphql.org/learn/
-- Documentação oficial ApolloServer: https://www.apollographql.com/docs/
+- GraphQL course: [https://cursos.alura.com.br/course/graphql-construindo-api-apollo-server](https://cursos.alura.com.br/course/graphql-construindo-api-apollo-server)
+- GraphQL official documentation: [https://graphql.org/learn/](https://graphql.org/learn/)
+- ApolloServer official documentation: [https://www.apollographql.com/docs/](https://www.apollographql.com/docs/)
